@@ -6,32 +6,30 @@
   <style>
     body {
       margin: 0;
-      background-color: #000;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+      background-size: 600% 600%;
+      animation: neonBackground 10s ease infinite;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       color: #fff;
       text-align: center;
-      overflow: hidden;
+    }
+
+    @keyframes neonBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
-      font-size: 90px;
-      color: #ff0000;
-      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
-      animation: rotateText 3s infinite linear, shakeText 0.5s infinite alternate;
-      margin-top: 20vh;
+      font-size: 60px;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+      animation: blink 1s infinite alternate;
     }
 
-    @keyframes rotateText {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes shakeText {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(10deg); }
-      50% { transform: rotate(-10deg); }
-      75% { transform: rotate(10deg); }
-      100% { transform: rotate(0deg); }
+    @keyframes blink {
+      from { opacity: 1; }
+      to { opacity: 0.3; }
     }
 
     .marquee {
@@ -39,13 +37,16 @@
       overflow: hidden;
       white-space: nowrap;
       box-sizing: border-box;
-      color: #00ff00;
-      font-size: 40px;
+      color: #00ffff;
+      font-size: 30px;
       font-weight: bold;
-      background: #111;
-      padding: 20px 0;
-      margin-top: 20px;
-      animation: marqueeAnim 6s linear infinite;
+      background: black;
+      padding: 10px;
+    }
+
+    .marquee span {
+      display: inline-block;
+      animation: marqueeAnim 10s linear infinite;
     }
 
     @keyframes marqueeAnim {
@@ -55,77 +56,24 @@
 
     .btn {
       margin-top: 50px;
-      background-color: #ff00ff;
+      background-color: #ff0000;
       color: yellow;
-      border: 5px solid #ff0000;
-      padding: 30px 60px;
-      font-size: 40px;
+      border: 3px solid #ffff00;
+      padding: 20px 40px;
+      font-size: 30px;
       cursor: pointer;
-      box-shadow: 0 0 25px #ff0000, 0 0 50px #ff0000;
-      transition: transform 0.2s, opacity 0.5s ease;
-      animation: moveButton 3s ease-in-out infinite;
+      box-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000;
+      transition: transform 0.2s;
     }
 
     .btn:hover {
       transform: scale(1.2) rotate(-5deg);
-      opacity: 0.8;
-    }
-
-    @keyframes moveButton {
-      0% { top: 0; left: 0; }
-      50% { top: -10px; left: 10px; }
-      100% { top: 0; left: 0; }
-    }
-
-    .text-flash {
-      font-size: 60px;
-      color: #ff0000;
-      animation: flashText 1s infinite alternate;
-      text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
-    }
-
-    @keyframes flashText {
-      from { opacity: 1; }
-      to { opacity: 0.3; }
-    }
-
-    .glow {
-      color: #ff00ff;
-      text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 50px #ff00ff;
-    }
-
-    .glow2 {
-      color: #00ffff;
-      text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 50px #00ffff;
-    }
-
-    .background-effects {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, #ff0000 0%, #ff7300 100%);
-      opacity: 0.2;
-      animation: backgroundPulse 5s ease-in-out infinite;
-    }
-
-    @keyframes backgroundPulse {
-      0% { opacity: 0.2; }
-      50% { opacity: 0.6; }
-      100% { opacity: 0.2; }
     }
   </style>
 </head>
 <body>
-  <div class="background-effects"></div>
-  <h1 class="glow">나애머찐웹페이지</h1>
-  <div class="marquee">
-    <span class="text-flash">💥 이 웹사이트는 정신 없어요! 💥 완전 불량스럽고 미친 스타일 💥</span>
-  </div>
-  <button class="btn">버튼을 눌러봐! 🤯</button>
-  <div class="marquee">
-    <span class="glow2">💥 정신 없는 요소들이 가득 💥 이건 2000년대 웹 디자인 느낌! 💥</span>
-  </div>
+  <h1>🔥나애머찐 웹페이지🔥</h1>
+  <div class="marquee"><span>💥 오지고 지리는 웹디자인 💥 이건 마치 플래시게임 감성 💥 눈뽕주의 💥</span></div>
+  <button class="btn">눌러봐! 🤯</button>
 </body>
 </html>
